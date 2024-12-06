@@ -27,13 +27,13 @@
                                   <img alt="Hehehehehe" loading="lazy" decoding="async" data-nimg="fill"
                                      class="duration-700 ease-in-out scale-100 blur-0 grayscale-0 object-cover"
                                      sizes="100vw"
-                                     src="https://png.pngtree.com/thumb_back/fh260/background/20230516/pngtree-animated-mountains-landscape-wallpaper-4k-and-1080p-2px-image_2565761.jpg"
+                                     src="https://www.codewithantonio.com/_next/image?url=https%3A%2F%2Futfs.io%2Ff%2F639978a4-f9e8-402d-ad9e-3f7921ff0efb-8goos1.png&w=1920&q=75"
                                      style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
                                </div>
                                <div class="flex flex-col pt-2 px-3">
                                   <div
                                      class="text-sm md:text-base font-medium group-hover:text-sky-700 transition line-clamp-1">
-                                     Hehehehehe</div>
+                                     Dự án code với Google docs</div>
                                </div>
                             </div>
                             <div class="px-3 pb-3"></div>

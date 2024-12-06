@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 const router = createRouter({
   history: createWebHistory(),
+  
   routes: [
     {
       path: "/",
@@ -9,8 +10,13 @@ const router = createRouter({
       children: [
         {
           path: "",
-          name: "home-page",
+          name: "trang-chu",
           component: () => import("../page/home.page.vue"),
+        },
+        {
+          path: "tin-tuc",
+          name: "tin-tuc",
+          component: () => import("../page/new.page.vue"),
         }
       ]
     },
