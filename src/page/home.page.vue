@@ -1,5 +1,5 @@
 <template>
-  <section class=" pt-[40px]">
+  <section class="min-h-screen h-full pt-[40px]">
     <div
       class="container h-fit max-h-screen overflow-hidden lg:flex lg:justify-between lg:items-start"
     >
