@@ -18,7 +18,7 @@
                      </button>
 
                   </SheetTrigger>
-                  <SheetContent class="w-[400px] sm:w-[540px]" side="left">
+                  <SheetContent class="w-[250px] sm:w-[540px]" side="left">
                      <div class="flex flex-col w-full space-y-1.5 pt-4">
                         <router-link to="/"
                         class="flex w-full text-sm items-center py-3.5 px-3 hover:bg-muted rounded-lg transition-background group"
