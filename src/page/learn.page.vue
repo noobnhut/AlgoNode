@@ -23,7 +23,7 @@
       class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-6"
     >
       <div v-for="algo in algos">
-        <a href="/">
+        <a :href="algo.link">
           <div
             class="group hover:shadow-sm border transition overflow-hidden rounded-lg h-full flex flex-col bg-white"
           >
@@ -38,7 +38,7 @@
                   data-nimg="fill"
                   class="duration-700 ease-in-out scale-100 blur-0 grayscale-0 object-cover"
                   sizes="100vw"
-                  :src="algo.img"
+                  :src="`https://res.cloudinary.com/dgnsgobj6/image/upload/`+ algo.img"
                   style="
                     position: absolute;
                     height: 100%;
