@@ -26,10 +26,16 @@
                         Trang chủ
                      </router-link>
 
+                     <router-link to="/on-tap"
+                        class="flex w-full text-sm text-muted-foreground items-center py-3.5 px-3 hover:bg-muted rounded-lg transition-background group"
+                        :class="{ 'bg-muted': isActiveTab('/on-tap') }" @click="setActiveTab('/on-tap')">
+                        Ôn tập
+                     </router-link>
+
                      <router-link to="/tin-tuc"
                         class="flex w-full text-sm text-muted-foreground items-center py-3.5 px-3 hover:bg-muted rounded-lg transition-background group"
                         :class="{ 'bg-muted': isActiveTab('/tin-tuc') }" @click="setActiveTab('/tin-tuc')">
-                        Tin tức
+                        DEV.TO
                      </router-link>
                      </div>
                   </SheetContent>
@@ -40,7 +46,7 @@
                <a href="/">
                   <div class="items-center gap-x-2 hidden lg:flex hover:opacity-75 transition-opacity">
                      <img alt="logo"
-                        src="https://media.discordapp.net/attachments/1137648162677456956/1260444636179075112/logo.png?ex=6751248b&is=674fd30b&hm=0a91ad6fc4acb362ee3b61944d3f0f7d64cb2b4bf251b7bc276b9768e2be3022&=&format=webp&quality=lossless&width=497&height=497"
+                        src="/public/vite.svg"
                         loading="lazy" width="40" height="40" style="color:transparent">
                      <div class="leading-tight">
                         <p class="font-semibold text-base text-sky-700">AlgoNode</p>
@@ -79,15 +85,21 @@
                <div class="flex flex-col w-full flex-1">
                   <div class="flex flex-col w-full space-y-1.5 p-3">
                      <router-link to="/"
-                        class="flex w-full text-sm items-center py-3.5 px-3 hover:bg-muted rounded-lg transition-background group"
-                        :class="{ 'bg-muted': isActiveTab('/') }" @click="setActiveTab('/')">
+                        class="flex w-full text-sm items-center text-muted-foreground  py-3.5 px-3 hover:bg-muted rounded-lg transition-background group"
+                        :class="{ 'bg-muted font-bold': isActiveTab('/') }" @click="setActiveTab('/')">
                         Trang chủ
                      </router-link>
 
+                     <router-link to="/on-tap"
+                        class="flex w-full text-sm text-muted-foreground items-center py-3.5 px-3 hover:bg-muted rounded-lg transition-background group"
+                        :class="{ 'bg-muted font-bold': isActiveTab('/on-tap') }" @click="setActiveTab('/on-tap')">
+                        Ôn tập
+                     </router-link>
+                     
                      <router-link to="/tin-tuc"
                         class="flex w-full text-sm text-muted-foreground items-center py-3.5 px-3 hover:bg-muted rounded-lg transition-background group"
-                        :class="{ 'bg-muted': isActiveTab('/tin-tuc') }" @click="setActiveTab('/tin-tuc')">
-                        Tin tức
+                        :class="{ 'bg-muted font-bold': isActiveTab('/tin-tuc') }" @click="setActiveTab('/tin-tuc')">
+                        DEV.TO
                      </router-link>
                   </div>
                </div>

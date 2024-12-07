@@ -24,7 +24,7 @@
               </div>
             </div>
             <div class="px-3 pb-3 text-xs text-gray-400">
-              Published: {{ new Date(item.published_at).toLocaleDateString() }}
+             Ngày đăng: {{ new Date(item.published_at).toLocaleDateString() }}
             </div>
           </div>
         </a>
@@ -79,7 +79,7 @@ export default {
   data() {
     return {
       news: [], // Dữ liệu bài viết
-      per_page: 8, // Số bài viết mỗi trang
+      per_page: 6, // Số bài viết mỗi trang
       page: 1, // Trang hiện tại
       total_pages: 0,
     };

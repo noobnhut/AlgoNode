@@ -17,6 +17,11 @@ const router = createRouter({
           path: "tin-tuc",
           name: "tin-tuc",
           component: () => import("../page/new.page.vue"),
+        },
+        {
+          path: "on-tap",
+          name: "on-tap",
+          component: () => import("../page/learn.page.vue"),
         }
       ]
     },
