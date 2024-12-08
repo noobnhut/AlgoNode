@@ -1,6 +1,7 @@
 <template>
   <!--main-->
   <!--search reponsive-->
+  <section class="min-h-screen h-full">
   <div class="px-6 pt-6 lg:hidden lg:mb-0 block">
     <form class="flex items-center relative">
       <input
@@ -19,69 +20,142 @@
 
   <!--list course-->
   <div class="p-6 space-y-4">
-    <div
-      class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-6"
-    >
-      <div v-for="algo in algos">
-        <a :href="algo.link">
-          <div
-            class="group hover:shadow-sm border transition overflow-hidden rounded-lg h-full flex flex-col bg-white"
-          >
-            <div class="flex-1">
-              <div
-                class="relative w-full aspect-video rounded-t-md overflow-hidden border-b"
-              >
-                <img
-                
-                  loading="lazy"
-                  decoding="async"
-                  data-nimg="fill"
-                  class="duration-700 ease-in-out scale-100 blur-0 grayscale-0 object-cover"
-                  sizes="100vw"
-                  :src="`https://res.cloudinary.com/dgnsgobj6/image/upload/`+ algo.img"
-                  style="
-                    position: absolute;
-                    height: 100%;
-                    width: 100%;
-                    inset: 0px;
-                    color: transparent;
-                  "
-                />
-              </div>
-              <div class="flex flex-col pt-2 px-3">
-                <div
-                  class="text-sm md:text-base font-medium group-hover:text-sky-700 transition line-clamp-1"
-                >
-                 {{ algo.title }}
-                </div>
-                <div class="my-3 flex items-center gap-x-2 text-xs">
-                  <div class="flex items-center gap-x-1 text-slate-500">
-                    <div
-                      class="inline-flex items-center border rounded-md px-2.5 py-0.5 text-xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-sky-500/10 text-sky-800"
-                    >
-                     
-                      <span>{{algo.date}}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <!--menu-->
+    <div class="flex items-center gap-x-2 overflow-x-auto pb-2">
+      <router-link to="/on-tap">
+        <div
+          class="py-2 px-3 text-sm rounded-md flex items-center gap-x-1 hover:shadow-sm transition cursor-pointer border"
+          :class="{
+            'border-sky-800/10 bg-sky-500/10 text-sky-800 font-bold': isActiveTab(
+              '/on-tap'
+            ),
+            'bg-white': !isActiveTab('/on-tap'),
+          }"
+          @click="setActiveTab('/on-tap')"
+        >
+          <div class="truncate text-xs font-semibold">All</div>
+        </div>
+      </router-link>
 
-            <div class="px-3 pb-3"></div>
-          </div>
-        </a>
-      </div>
+      <router-link to="/array">
+        <div
+          class="py-2 px-3 text-sm rounded-md flex items-center gap-x-1 hover:shadow-sm transition cursor-pointer border"
+          :class="{
+            'border-sky-800/10 bg-sky-500/10 text-sky-800 font-bold': isActiveTab(
+              '/array'
+            ),
+            'bg-white': !isActiveTab('/array'),
+          }"
+          @click="setActiveTab('/array')"
+        >
+          <div class="truncate text-xs font-semibold">Mảng</div>
+        </div>
+      </router-link>
+
+      <router-link to="/danh-sach">
+        <div
+          class="py-2 px-3 text-sm rounded-md flex items-center gap-x-1 hover:shadow-sm transition cursor-pointer border"
+          :class="{
+            'border-sky-800/10 bg-sky-500/10 text-sky-800 font-bold': isActiveTab(
+              '/danh-sach'
+            ),
+            'bg-white': !isActiveTab('/danh-sach'),
+          }"
+          @click="setActiveTab('/danh-sach')"
+        >
+          <div class="truncate text-xs font-semibold">Danh sách</div>
+        </div>
+      </router-link>
+
+      <router-link to="/ngan-xep-hang-doi">
+        <div
+          class="py-2 px-3 text-sm rounded-md flex items-center gap-x-1 hover:shadow-sm transition cursor-pointer border"
+          :class="{
+            'border-sky-800/10 bg-sky-500/10 text-sky-800 font-bold': isActiveTab(
+              '/ngan-xep-hang-doi'
+            ),
+            'bg-white': !isActiveTab('/ngan-xep-hang-doi'),
+          }"
+          @click="setActiveTab('/ngan-xep-hang-doi')"
+        >
+          <div class="truncate text-xs font-semibold">Ngăn xếp và hàng đợi</div>
+        </div>
+      </router-link>
+
+      <router-link to="/giai-thuat-tim-kiem">
+        <div
+          class="py-2 px-3 text-sm rounded-md flex items-center gap-x-1 hover:shadow-sm transition cursor-pointer border"
+          :class="{
+            'border-sky-800/10 bg-sky-500/10 text-sky-800 font-bold': isActiveTab(
+              '/giai-thuat-tim-kiem'
+            ),
+            'bg-white': !isActiveTab('/giai-thuat-tim-kiem'),
+          }"
+          @click="setActiveTab('/giai-thuat-tim-kiem')"
+        >
+          <div class="truncate text-xs font-semibold">Giải thuật tìm kiếm</div>
+        </div>
+      </router-link>
+
+      <router-link to="/giai-thuat-sap-xep">
+        <div
+          class="py-2 px-3 text-sm rounded-md flex items-center gap-x-1 hover:shadow-sm transition cursor-pointer border"
+          :class="{
+            'border-sky-800/10 bg-sky-500/10 text-sky-800 font-bold': isActiveTab(
+              '/giai-thuat-sap-xep'
+            ),
+            'bg-white': !isActiveTab('/giai-thuat-sap-xep'),
+          }"
+          @click="setActiveTab('/giai-thuat-sap-xep')"
+        >
+          <div class="truncate text-xs font-semibold">Giải thuật sắp xếp</div>
+        </div>
+      </router-link>
+
+      <router-link to="/cau-truc-du-lieu-cay">
+        <div
+          class="py-2 px-3 text-sm rounded-md flex items-center gap-x-1 hover:shadow-sm transition cursor-pointer border"
+          :class="{
+            'border-sky-800/10 bg-sky-500/10 text-sky-800 font-bold': isActiveTab(
+              '/cau-truc-du-lieu-cay'
+            ),
+            'bg-white': !isActiveTab('/cau-truc-du-lieu-cay'),
+          }"
+          @click="setActiveTab('/cau-truc-du-lieu-cay')"
+        >
+          <div class="truncate text-xs font-semibold">Cấu trúc dữ liệu cây</div>
+        </div>
+      </router-link>
+
+      <router-link to="/de-quy">
+        <div
+          class="py-2 px-3 text-sm rounded-md flex items-center gap-x-1 hover:shadow-sm transition cursor-pointer border"
+          :class="{
+            'border-sky-800/10 bg-sky-500/10 text-sky-800 font-bold': isActiveTab(
+              '/de-quy'
+            ),
+            'bg-white': !isActiveTab('/de-quy'),
+          }"
+          @click="setActiveTab('/de-quy')"
+        >
+          <div class="truncate text-xs font-semibold">Đệ quy</div>
+        </div>
+      </router-link>
     </div>
+
+    <!--course-->
+    <router-view></router-view>
   </div>
+</section>
 </template>
 
 <script>
 import { SearchIcon } from "lucide-vue-next";
-import axios from "axios";
+
 export default {
   data() {
     return {
-      algos: [],
+      activeTab: this.$route.path,
     };
   },
 
@@ -89,20 +163,21 @@ export default {
     SearchIcon,
   },
 
-  mounted() {
-    this.getAlgos();
+  watch: {
+    // Khi URL thay đổi (chuyển tab), cập nhật lại activeTab
+    "$route.path"(newPath) {
+      this.activeTab = newPath;
+    },
   },
+  mounted() {},
 
   methods: {
-    async getAlgos() {
-      try {
-        const response = await axios.get(
-          "https://6753ea65f3754fcea7bcc402.mockapi.io/api/v1/algo_table"
-        );
-        this.algos = response.data;
-      } catch (error) {
-        console.log(error);
-      }
+    isActiveTab(tabPath) {
+      return this.activeTab === tabPath;
+    },
+    // Set active tab khi click vào tab
+    setActiveTab(tabPath) {
+      this.activeTab = tabPath;
     },
   },
 };

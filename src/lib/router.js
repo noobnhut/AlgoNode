@@ -14,17 +14,66 @@ const router = createRouter({
           component: () => import("../page/home.page.vue"),
         },
         {
-          path: "tin-tuc",
+          path: "/tin-tuc",
           name: "tin-tuc",
           component: () => import("../page/new.page.vue"),
         },
         {
-          path: "on-tap",
+          path: "/on-tap",
           name: "on-tap",
           component: () => import("../page/learn.page.vue"),
+          children: [
+            {
+              path: "",
+              name: "all",
+              component: () => import("../page/pagemenu/all.page.vue"),
+            },
+
+            {
+              path: "/array",
+              name: "array",
+              component: () => import("../page/pagemenu/array.page.vue"),
+            },
+
+            {
+              path: "/giai-thuat-tim-kiem",
+              name: "giai-thuat-tim-kiem",
+              component: () => import("../page/pagemenu/search.page.vue"),
+            },
+
+            {
+              path: "/de-quy",
+              name: "de-quy",
+              component: () => import("../page/pagemenu/dequy.page.vue"),
+            },
+            {
+              path: "/cau-truc-du-lieu-cay",
+              name: "cau-truc-du-lieu-cay",
+              component: () => import("../page/pagemenu/tree.page.vue"),
+            },
+
+            {
+              path: "/ngan-xep-hang-doi",
+              name: "ngan-xep-hang-doi",
+              component: () => import("../page/pagemenu/queue.stack.vue"),
+            },
+
+            {
+              path: "/danh-sach",
+              name: "danh-sach",
+              component: () => import("../page/pagemenu/list.page.vue"),
+            },
+
+            {
+              path: "/giai-thuat-sap-xep",
+              name: "giai-thuat-sap-xep",
+              component: () => import("../page/pagemenu/sort.page.vue"),
+            },
+
+          ],
         },
         {
-          path: "cau-truc-du-lieu-mang",
+          path: "/cau-truc-du-lieu-mang",
           name: "cau-truc-du-lieu-mang",
           component: () => import("../page/algonode/array.page.vue"),
         },
