@@ -22,6 +22,7 @@
   <div class="p-6 space-y-4">
     <!--menu-->
     <div class="flex items-center gap-x-2 overflow-x-auto pb-2">
+      
       <router-link to="/on-tap">
         <div
           class="py-2 px-3 text-sm rounded-md flex items-center gap-x-1 hover:shadow-sm transition cursor-pointer border"
@@ -37,7 +38,7 @@
         </div>
       </router-link>
 
-      <router-link to="/array">
+      <router-link to="/on-tap/array">
         <div
           class="py-2 px-3 text-sm rounded-md flex items-center gap-x-1 hover:shadow-sm transition cursor-pointer border"
           :class="{
@@ -52,7 +53,7 @@
         </div>
       </router-link>
 
-      <router-link to="/danh-sach">
+      <router-link to="/on-tap/danh-sach">
         <div
           class="py-2 px-3 text-sm rounded-md flex items-center gap-x-1 hover:shadow-sm transition cursor-pointer border"
           :class="{
@@ -67,7 +68,7 @@
         </div>
       </router-link>
 
-      <router-link to="/ngan-xep-hang-doi">
+      <router-link to="/on-tap/ngan-xep-hang-doi">
         <div
           class="py-2 px-3 text-sm rounded-md flex items-center gap-x-1 hover:shadow-sm transition cursor-pointer border"
           :class="{
@@ -82,7 +83,7 @@
         </div>
       </router-link>
 
-      <router-link to="/giai-thuat-tim-kiem">
+      <router-link to="/on-tap/giai-thuat-tim-kiem">
         <div
           class="py-2 px-3 text-sm rounded-md flex items-center gap-x-1 hover:shadow-sm transition cursor-pointer border"
           :class="{
@@ -97,7 +98,7 @@
         </div>
       </router-link>
 
-      <router-link to="/giai-thuat-sap-xep">
+      <router-link to="/on-tap/giai-thuat-sap-xep">
         <div
           class="py-2 px-3 text-sm rounded-md flex items-center gap-x-1 hover:shadow-sm transition cursor-pointer border"
           :class="{
@@ -112,7 +113,7 @@
         </div>
       </router-link>
 
-      <router-link to="/cau-truc-du-lieu-cay">
+      <router-link to="/on-tap/cau-truc-du-lieu-cay">
         <div
           class="py-2 px-3 text-sm rounded-md flex items-center gap-x-1 hover:shadow-sm transition cursor-pointer border"
           :class="{
@@ -127,7 +128,7 @@
         </div>
       </router-link>
 
-      <router-link to="/de-quy">
+      <router-link to="/on-tap/de-quy">
         <div
           class="py-2 px-3 text-sm rounded-md flex items-center gap-x-1 hover:shadow-sm transition cursor-pointer border"
           :class="{
@@ -141,6 +142,7 @@
           <div class="truncate text-xs font-semibold">Đệ quy</div>
         </div>
       </router-link>
+
     </div>
 
     <!--course-->
