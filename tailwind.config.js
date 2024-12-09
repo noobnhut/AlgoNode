@@ -1,4 +1,4 @@
-
+import typography from '@tailwindcss/typography';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -13,7 +13,7 @@ export default {
     './app/**/*.{js,jsx,vue}',
     './src/**/*.{js,jsx,vue}',
 	],
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [typography],
   theme: {
     container: {
       center: true,
