@@ -13,7 +13,7 @@ export default {
     './app/**/*.{js,jsx,vue}',
     './src/**/*.{js,jsx,vue}',
 	],
-  
+  plugins: [require('@tailwindcss/typography')],
   theme: {
     container: {
       center: true,

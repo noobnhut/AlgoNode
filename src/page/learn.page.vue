@@ -21,7 +21,7 @@
   <!--list course-->
   <div class="p-6 space-y-4">
     <!--menu-->
-    <div class="flex items-center gap-x-2 overflow-x-auto pb-2">
+    <div class="flex items-center gap-x-2 overflow-x-auto pb-2 pt-[40px]">
       
       <router-link to="/on-tap">
         <div

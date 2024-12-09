@@ -111,7 +111,7 @@
          </div>
 
          <!--main-->
-         <main class="lg:pl-72 pt-[80px] bg-muted">
+         <main class="lg:pl-72 pt-[40px] bg-muted">
             <router-view />
          </main>
 

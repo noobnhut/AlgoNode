@@ -4,7 +4,7 @@
       class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-6"
     >
       <div v-for="algo in algos.filter(item => item.type_menu === $route.params.algoPath)">
-        <a :href="algo.link">
+        <a :href="'/'+algo.link">
           <div
             class="group hover:shadow-sm border transition overflow-hidden rounded-lg h-full flex flex-col bg-white"
           >

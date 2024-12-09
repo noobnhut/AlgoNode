@@ -1,10 +1,14 @@
 <template>
-    <section class="bg-white p-6" v-for="item in algo_items.filter(item => item.link == $route.params.algoPath)" :key="item.id">
+    <section class="bg-white" v-for="item in algo_items.filter(item => item.link == $route.params.algoPath)"
+        :key="item.id">
         <div class="rounded-lg shadow-lg p-6">
-            <span v-html="item.content"></span>
-            <pre>
+            <div class="prose">
+                <span v-html="item.content"></span>
+            </div>
+
+            <!-- <pre>
                 <code class="language-javascript" v-html="highlightCode(item.content_code)"></code>
-            </pre>
+            </pre>  -->
         </div>
     </section>
 </template>
