@@ -1,6 +1,5 @@
 <template>
     <section class="" v-for="item in algo_items.filter(item => item.link == $route.params.algoPath)" :key="item.id">
-        {{ item.content }}
         <template v-if="!item.content">
             <div class="flex flex-col items-center justify-center h-full min-h-screen">
                 <h1 class="text-4xl font-bold text-gray-800 mb-4">Coming Soon</h1>
