@@ -19,6 +19,11 @@ const router = createRouter({
           component: () => import("../page/new.page.vue"),
         },
         {
+          path: "/tim-kiem",
+          name: "search",
+          component: () => import("../page/pagemenu/search.page.vue"),
+        },
+        {
           path: "/on-tap",
           name: "on-tap",
           component: () => import("../page/learn.page.vue"),
@@ -28,7 +33,6 @@ const router = createRouter({
               name: "all",
               component: () => import("../page/pagemenu/all.page.vue"),
             },
-            
             {
               path: "/on-tap/:algoPath",
               name: "ontap-path",

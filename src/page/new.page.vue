@@ -1,6 +1,6 @@
 <template>
   <div class="p-6 space-y-4 pt-[50px]">
-    <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
+    <div class="grid sm:grid-cols-2 md:grid-cols-2  2xl:grid-cols-3 gap-6">
       <div v-for="item in news" :key="item.id" class="relative">
         <a :href="item.url" target="_blank">
           <div class="group hover:shadow-sm border transition overflow-hidden rounded-lg h-full flex flex-col bg-white">

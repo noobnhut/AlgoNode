@@ -18,25 +18,26 @@
                      </button>
 
                   </SheetTrigger>
+                  <SheetTitle class="sr-only">navbar mobile</SheetTitle>
                   <SheetContent class="w-[250px] sm:w-[540px]" side="left">
                      <div class="flex flex-col w-full space-y-1.5 pt-4">
                         <router-link to="/"
-                        class="flex w-full text-sm items-center text-muted-foreground  py-3.5 px-3 hover:bg-muted rounded-lg transition-background group"
-                        :class="{ 'bg-muted font-bold': isActiveTab('/') }" @click="setActiveTab('/')">
-                        Trang chủ
-                     </router-link>
+                           class="flex w-full text-sm items-center text-muted-foreground  py-3.5 px-3 hover:bg-muted rounded-lg transition-background group"
+                           :class="{ 'bg-muted font-bold': isActiveTab('/') }" @click="setActiveTab('/')">
+                           Trang chủ
+                        </router-link>
 
-                     <router-link to="/on-tap"
-                        class="flex w-full text-sm text-muted-foreground items-center py-3.5 px-3 hover:bg-muted rounded-lg transition-background group"
-                        :class="{ 'bg-muted font-bold': isActiveTab('/on-tap') }" @click="setActiveTab('/on-tap')">
-                        Ôn tập
-                     </router-link>
-                     
-                     <router-link to="/tin-tuc"
-                        class="flex w-full text-sm text-muted-foreground items-center py-3.5 px-3 hover:bg-muted rounded-lg transition-background group"
-                        :class="{ 'bg-muted font-bold': isActiveTab('/tin-tuc') }" @click="setActiveTab('/tin-tuc')">
-                        DEV.TO
-                     </router-link>
+                        <router-link to="/on-tap"
+                           class="flex w-full text-sm text-muted-foreground items-center py-3.5 px-3 hover:bg-muted rounded-lg transition-background group"
+                           :class="{ 'bg-muted font-bold': isActiveTab('/on-tap') }" @click="setActiveTab('/on-tap')">
+                           Ôn tập
+                        </router-link>
+
+                        <router-link to="/tin-tuc"
+                           class="flex w-full text-sm text-muted-foreground items-center py-3.5 px-3 hover:bg-muted rounded-lg transition-background group"
+                           :class="{ 'bg-muted font-bold': isActiveTab('/tin-tuc') }" @click="setActiveTab('/tin-tuc')">
+                           DEV.TO
+                        </router-link>
                      </div>
                   </SheetContent>
                </Sheet>
@@ -45,9 +46,8 @@
                <!--icon website-->
                <a href="/">
                   <div class="items-center gap-x-2 hidden lg:flex hover:opacity-75 transition-opacity">
-                     <img alt="logo"
-                        src="/public/vite.svg"
-                        loading="lazy" width="40" height="40" style="color:transparent">
+                     <img alt="logo" src="/public/vite.svg" loading="lazy" width="40" height="40"
+                        style="color:transparent">
                      <div class="leading-tight">
                         <p class="font-semibold text-base text-sky-700">AlgoNode</p>
                         <p class="text-xs text-muted-foreground">404NFP Team</p>
@@ -57,15 +57,16 @@
 
                <!--search bar-->
                <div class="ml-auto hidden lg:block">
-                  <form class="flex items-center relative">
-                     <input
+                  <div class="flex items-center relative">
+                     <input v-model="searchValue" @keyup.enter="searchHandler"
                         class="flex h-10 border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full lg:w-[600px] rounded-lg rounded-r-none focus-visible:ring-transparent pr-8"
-                        placeholder="Tìm kiếm ..." value=""><button
+                        placeholder="Tìm kiếm ..." />
+                     <button @click="searchHandler"
                         class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-sky-700 text-white hover:bg-sky-700/80 h-10 px-4 py-2 rounded-l-none"
-                        type="submit">
+                        type="button">
                         <SearchIcon class="h-4 w-4"></SearchIcon>
                      </button>
-                  </form>
+                  </div>
                </div>
 
                <!--icon team 404nfp-->
@@ -95,7 +96,7 @@
                         :class="{ 'bg-muted font-bold': isActiveTab('/on-tap') }" @click="setActiveTab('/on-tap')">
                         Ôn tập
                      </router-link>
-                     
+
                      <router-link to="/tin-tuc"
                         class="flex w-full text-sm text-muted-foreground items-center py-3.5 px-3 hover:bg-muted rounded-lg transition-background group"
                         :class="{ 'bg-muted font-bold': isActiveTab('/tin-tuc') }" @click="setActiveTab('/tin-tuc')">
@@ -135,10 +136,12 @@ import {
    SheetTitle,
    SheetTrigger,
 } from '@/components/ui/sheet'
+
 export default {
    data() {
       return {
          activeTab: this.$route.path,
+         searchValue: "",
       }
    },
 
@@ -152,6 +155,7 @@ export default {
       SheetHeader,
       SheetTitle,
       SheetTrigger,
+
       Menu
    },
 
@@ -173,6 +177,14 @@ export default {
       setActiveTab(tabPath) {
          this.activeTab = tabPath;
       },
+
+      searchHandler() {
+      if (this.searchValue.trim()) {
+        // Điều hướng đến URL tìm kiếm
+                window.location.href = `/tim-kiem?q=${encodeURIComponent(this.searchValue)}`;
+
+      }
+    },
    }
 }
 </script>
